@@ -17,9 +17,6 @@ void setup() {
 Serial.begin(9600); //Iniciamos la comunicacion serial
 pinMode(motor1, OUTPUT); 
 pinMode(motor2, OUTPUT); 
-Serial.println("Para seleccionar la velocidad del motor (0-9). Para seleccionar la direccion introduce + o -"); //Imprime en la consola puerto serie
-//pinMode(led_izq, OUTPUT);
-//pinMode(led_der, OUTPUT);
 servo1.attach(servo_pin, pulso_min,pulso_max);
 pinMode(boton,INPUT);
 
@@ -45,29 +42,4 @@ void loop() {
       }
     }
 
-  /*
-  if ( Serial.available()) { //Comprobamos que el puerto serial esta disponible para la comunicacion
-    char ch = Serial.read(); //Leemos las variables que introducimos desde el teclado por el monitor serial
-    if(ch >= '0' && ch <= '9') {
-      int speed = map(ch, '0', '9', 0, 255); // Adaptamos el numero a una escala de 0 a 255
-      analogWrite(motor0, speed);
-      Serial.println("El valor de velocidad intruducido es:");
-      Serial.println(speed); //Escribe el valor analogico PWM enPin
-    }
-    else if (ch == '+') {
-      Serial.println("Girando en sentido horario...");
-      digitalWrite(motor1,LOW);
-      digitalWrite(motor2,HIGH);
-    }
-    else if (ch == '-') { 
-      Serial.println("Girando en sentido anti-horario...");
-      digitalWrite(motor1,HIGH);
-      digitalWrite(motor2,LOW);
-    }
-    //else {
-    //  Serial.print("Caracter no reconocido. Error.");
-    //  Serial.println(ch);
-    //}
-   
-   }
-}*/
+ 
