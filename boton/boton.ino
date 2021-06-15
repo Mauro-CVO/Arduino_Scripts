@@ -11,7 +11,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-if (estado == HIGH){
+estado = digitalRead(boton);
+  if (estado == HIGH){
     salida = 1 -salida;}
     if (salida == 1) {
     digitalWrite(led, HIGH);
